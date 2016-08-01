@@ -1,0 +1,51 @@
+﻿@model MVCMoviesND.Models.Movie
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+   
+
+        <h4>
+            Movies
+        </h4><hr/>
+      
+        <div class= "dl-horizontal">
+
+            @Html.HiddenFor(model => model.Id)
+
+            <div>
+                @Html.LabelFor(model => model.Title)
+                @Html.EditorFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.ReleaseDate)
+                @Html.EditorFor(model => model.ReleaseDate)
+                @Html.ValidationMessageFor(model => model.ReleaseDate, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.Genre)
+                @Html.EditorFor(model => model.Genre)
+                @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.Price)
+                @Html.EditorFor(model => model.Price)
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+            <input type="submit" value="Save" class="btn btn-default" />
+
+</div>
+    
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index");
+</div>
+
